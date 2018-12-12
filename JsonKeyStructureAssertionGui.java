@@ -40,8 +40,6 @@ public class JsonKeyStructureAssertionGui extends AbstractAssertionGui implement
         panel.add(jsonString);
         panel.add(jsonKeyStructure);
 
-        panel.add(comments);
-
         add(panel, BorderLayout.CENTER);
     }
 
