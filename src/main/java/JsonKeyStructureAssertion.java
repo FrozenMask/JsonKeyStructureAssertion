@@ -75,11 +75,13 @@ public class JsonKeyStructureAssertion extends AbstractTestElement implements Se
 
     private void parshJsonArray(JSONArray array, StringBuffer jsonPath) {
         jsonPath.append("[");
-        Object arrayObject = array.get(0);
-        if (arrayObject instanceof JSONArray) {
-            parshJsonArray((JSONArray) arrayObject, jsonPath);
-        } else if (arrayObject instanceof JSONObject) {
-            printJsonPath((JSON) arrayObject, jsonPath);
+        if (array.size() > 0) {
+            Object arrayObject = array.get(0);
+            if (arrayObject instanceof JSONArray) {
+                parshJsonArray((JSONArray) arrayObject, jsonPath);
+            } else if (arrayObject instanceof JSONObject) {
+                printJsonPath((JSON) arrayObject, jsonPath);
+            }
         }
         jsonPath.append("]");
     }
